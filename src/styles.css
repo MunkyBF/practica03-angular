@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+/* Variables de color */
+@import "tailwindcss";
+
+/* En global styles.css o styles.scss si quieres, para la fuente gótica */
+.gothic-font {
+  font-family: 'UnifrakturCook', cursive;
+}
+
+
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #166088;
+  --accent-color: #4fc3f7;
+  --background-light: #f8f9fa;
+  --text-dark: #333;
+  --text-light: #fff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+body {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}

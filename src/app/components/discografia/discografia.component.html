@@ -1,0 +1,38 @@
+<section class="discografia fade-in bg-gradient-to-b from-black to-gray-900 py-20">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="text-center">
+      <h2 class="section-title text-4xl md:text-5xl mb-16 font-bold text-white font-unifraktur relative inline-block">
+        Discografia
+      </h2>
+    </div>
+
+    <div class="albums-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div *ngFor="let album of albums" class="album-card group relative bg-gray-900 rounded-xl overflow-hidden shadow-2xl hover:shadow-white/20 transition-all duration-500 hover:-translate-y-2">
+        <div class="overflow-hidden">
+          <img [src]="album.cover" alt="{{ album.title }} cover" 
+               class="w-full h-72 object-cover transform group-hover:scale-105 transition duration-700" />
+        </div>
+        
+        <div class="album-info p-6 text-center relative z-10">
+          
+          <h3 class="text-2xl font-unifraktur text-white mb-1 relative group-hover:text-purple-700 transition">{{ album.title }}</h3>
+          <p class="year text-gray-300 font-mono mb-5 relative">{{ album.year }}</p>
+          
+<a href="https://open.spotify.com/intl-es/artist/1Qp56T7n950O3EGMsSl81D?si=Bkeb-S4gSAuUhJ135-eHyA" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   class="inline-block border border-white/50 text-white px-6 py-2 tracking-wider hover:border-white hover:bg-white/10 transition-colors duration-300 cursor-pointer">
+  ESCUCHAR
+</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+.font-unifraktur {
+  font-family: "UnifrakturMaguntia", cursive;
+}
+</style>
