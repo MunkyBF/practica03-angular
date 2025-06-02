@@ -1,38 +1,99 @@
-<section class="discografia fade-in bg-gradient-to-b from-black to-gray-900 py-20">
-  <div class="container mx-auto px-4 max-w-6xl">
-    <div class="text-center">
-      <h2 class="section-title text-4xl md:text-5xl mb-16 font-bold text-white font-unifraktur relative inline-block">
-        Discografia
+<section class="discografia fade-in bg-gradient-to-b from-black to-gray-900 py-12 md:py-20 px-4">
+  <div class="container mx-auto max-w-6xl">
+    <!-- Encabezado con filtros -->
+    <div class="text-center mb-12">
+      <h2 class="section-title text-4xl md:text-5xl font-bold text-white font-unifraktur mb-6">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-300 to-purple-500">Discografía</span>
       </h2>
+      
+      <mat-divider class="!mb-8 !border-gray-700"></mat-divider>
+      
+      <div class="filters flex flex-wrap justify-center gap-2 mb-8">
+        <button mat-raised-button *ngFor="let filter of filters" 
+                (click)="filterAlbums(filter.value)"
+                [color]="activeFilter === filter.value ? 'accent' : 'primary'"
+                class="!rounded-full">
+          {{filter.label}}
+        </button>
+      </div>
     </div>
 
-    <div class="albums-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-      <div *ngFor="let album of albums" class="album-card group relative bg-gray-900 rounded-xl overflow-hidden shadow-2xl hover:shadow-white/20 transition-all duration-500 hover:-translate-y-2">
-        <div class="overflow-hidden">
-          <img [src]="album.cover" alt="{{ album.title }} cover" 
-               class="w-full h-72 object-cover transform group-hover:scale-105 transition duration-700" />
-        </div>
-        
-        <div class="album-info p-6 text-center relative z-10">
+    <!-- Grid de álbumes -->
+    <mat-grid-list cols="2" rowHeight="2:2.5" gutterSize="16px">
+      <mat-grid-tile *ngFor="let album of filteredAlbums" 
+                    (click)="selectAlbum(album)"
+                    [class.selected]="selectedAlbum?.id === album.id">
+        <mat-card class="album-card w-full h-full !bg-gray-900 !text-white">
+          <div class="relative h-full">
+            <!-- Portada del álbum -->
+            <img mat-card-image [src]="album.cover" [alt]="album.title + ' cover'" class="h-[70%] object-cover">
+            
+            <!-- Info del álbum -->
+            <mat-card-content class="!p-4">
+              <h3 class="!text-xl !font-bold !mb-1">{{ album.title }}</h3>
+              <p class="!text-gray-400 !text-sm">{{ album.year }}</p>
+            </mat-card-content>
+            
+            <!-- Botón flotante -->
+            <button mat-fab color="accent" class="absolute right-4 top-4 !bg-purple-600 !shadow-lg"
+                    (click)="selectAlbum(album); $event.stopPropagation()">
+              <mat-icon>play_arrow</mat-icon>
+            </button>
+          </div>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <!-- Detalles del álbum seleccionado -->
+    <div *ngIf="selectedAlbum" class="album-detail mt-12 animate-fadeIn">
+      <mat-card class="!bg-gray-900/50 !text-white !border !border-gray-800">
+        <div class="flex flex-col md:flex-row gap-6">
+          <!-- Portada -->
+          <div class="md:w-1/3 flex justify-center">
+            <img [src]="selectedAlbum.cover" [alt]="selectedAlbum.title + ' cover'" 
+                 class="rounded-lg w-full max-w-xs shadow-xl">
+          </div>
           
-          <h3 class="text-2xl font-unifraktur text-white mb-1 relative group-hover:text-purple-700 transition">{{ album.title }}</h3>
-          <p class="year text-gray-300 font-mono mb-5 relative">{{ album.year }}</p>
-          
-<a href="https://open.spotify.com/intl-es/artist/1Qp56T7n950O3EGMsSl81D?si=Bkeb-S4gSAuUhJ135-eHyA" 
-   target="_blank" 
-   rel="noopener noreferrer"
-   class="inline-block border border-white/50 text-white px-6 py-2 tracking-wider hover:border-white hover:bg-white/10 transition-colors duration-300 cursor-pointer">
-  ESCUCHAR
-</a>
+          <!-- Detalles -->
+          <div class="md:w-2/3">
+            <mat-card-header>
+              <mat-card-title class="!text-2xl !font-bold">{{ selectedAlbum.title }}</mat-card-title>
+              <mat-card-subtitle class="!text-gray-400">
+                {{ selectedAlbum.year }} • {{ selectedAlbum.type }}
+                <mat-chip class="!ml-2 !bg-purple-900 !text-purple-100">
+                  {{ selectedAlbum.songs.length }} canciones
+                </mat-chip>
+              </mat-card-subtitle>
+            </mat-card-header>
+            
+            <mat-divider class="!my-4 !border-gray-700"></mat-divider>
+            
+            <mat-card-content>
+              <h4 class="!text-xl !font-bold !mb-4">Lista de canciones</h4>
+              <mat-list>
+                <mat-list-item *ngFor="let song of selectedAlbum.songs; let i = index" 
+                              class="hover:!bg-gray-800/50 !rounded">
+                  <span matListItemTitle class="!flex items-center">
+                    <span class="!text-gray-500 !w-8 !text-right !mr-3">{{ i + 1 }}.</span>
+                    {{ song.title }}
+                    <span class="!ml-auto !text-gray-500">{{ song.duration }}</span>
+                  </span>
+                </mat-list-item>
+              </mat-list>
+            </mat-card-content>
+            
+            <mat-card-actions class="!flex !flex-wrap !gap-2">
+              <button mat-raised-button *ngFor="let platform of platforms" 
+                      color="primary"
+                      (click)="playOnPlatform(platform.link)"
+                      class="!flex !items-center !rounded-full">
+                <mat-icon class="!mr-2">{{ platform.icon }}</mat-icon>
+                {{ platform.name }}
+              </button>
+            </mat-card-actions>
+          </div>
         </div>
-      </div>
+      </mat-card>
     </div>
   </div>
 </section>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
-.font-unifraktur {
-  font-family: "UnifrakturMaguntia", cursive;
-}
-</style>
