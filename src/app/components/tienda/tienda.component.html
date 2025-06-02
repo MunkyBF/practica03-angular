@@ -1,38 +1,116 @@
-<section class="ghost-info fade-in bg-black text-white py-20 px-4 min-h-screen">
-  <div class="container mx-auto max-w-2xl text-center">
-    <h1 class="text-5xl md:text-6xl font-unifraktur mb-6 text-white">Ghost</h1>
-    
-    <div class="mb-12">
-      <img src="https://wallpapers.com/images/featured/ghost-band-vexso3dj5a9qmzdd.jpg" 
-           alt="Ghost" 
-           class="mx-auto w-128   object-cover ">
+<section class="ghost-info fade-in bg-gradient-to-b from-gray-900 to-black text-white py-16 px-4 min-h-screen">
+  <div class="container mx-auto max-w-4xl">
+    <!-- Encabezado con logo y título -->
+    <div class="text-center mb-12">
+      <h1 class="text-5xl md:text-7xl font-unifraktur mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-purple-500">
+        Ghost
+      </h1>
+      <p class="text-xl text-gray-300 font-light tracking-wider">THE SWEDISH RITUAL</p>
     </div>
     
-    <div class="ghost-description px-4 md:px-0">
-      <p class="text-lg leading-relaxed mb-6">
-        Ghost is a Swedish rock band known for combining costumed theatricality, heavy metal, and arena rock. Formed in Linköping in 2006, the band released their debut album, Opus Eponymous in 2010, which earned them international recognition. This was followed by Infestissumam in 2013 and in 2015 by Meliora, which reached number one in Sweden and number eight in the US. This was followed by the albums Prequelle in 2018 and Impera in 2022. The band's sixth studio album, Skeletá was released in 2025; it subsequently became their first Billboard number one album.
-
-
-      </p>
+    <!-- Imagen principal con efecto de glow -->
+    <div class="mb-14 relative group">
+      <img src="https://wallpapers.com/images/featured/ghost-band-vexso3dj5a9qmzdd.jpg" 
+           alt="Ghost performing live" 
+           class="mx-auto rounded-lg w-full max-w-2xl shadow-2xl shadow-purple-900/50 transform group-hover:scale-[1.01] transition-transform duration-500">
+      <div class="absolute inset-0 bg-purple-900/20 rounded-lg mix-blend-screen pointer-events-none"></div>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <!-- Historia de la banda -->
+      <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800 hover:border-purple-500/30 transition-all duration-300">
+        <h2 class="text-2xl font-bold mb-4 text-purple-400 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          Historia
+        </h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Ghost es una banda sueca formada en Linköping en 2006 por Tobias Forge. Lo que comenzó como un proyecto underground rápidamente escaló a fama internacional con su mezcla única de heavy metal, rock satánico y teatralidad oscura.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+          Su primer álbum "Opus Eponymous" (2010) estableció su estética única: una combinación de melodías pegajosas con letras que exploran temas de satanismo, ocultismo y crítica social, todo envuelto en una elaborada narrativa conceptual.
+        </p>
+      </div>
       
-      <p class="text-lg leading-relaxed mb-8">
-        Known for their costumed on-stage presence, Ghost's members, except for the lead vocalist, are known as "Nameless Ghouls". The lead-singer has performed under the persona of "Papa Emeritus", a character known for its "demonic anti-pope" imagery, while changing this for subsequent tours.
-
-In 2017, the identity of the lead singer was revealed
-      </p>
+      <!-- Discografía destacada -->
+      <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800 hover:border-purple-500/30 transition-all duration-300">
+        <h2 class="text-2xl font-bold mb-4 text-purple-400 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+          </svg>
+          Discografía Clave
+        </h2>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <span class="text-purple-500 mr-2">•</span>
+            <span class="text-gray-300"><strong>Meliora (2015):</strong> Ganador del Grammy por "Cirice", marcó su salto al mainstream.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-500 mr-2">•</span>
+            <span class="text-gray-300"><strong>Prequelle (2018):</strong> Exploró temas de plagas y apocalipsis con hits como "Rats".</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-500 mr-2">•</span>
+            <span class="text-gray-300"><strong>Impera (2022):</strong> Un álbum conceptual sobre el auge y caída de imperios.</span>
+          </li>
+        </ul>
+      </div>
       
-      <div class="flex justify-center space-x-6">
+      <!-- Personajes y Teatralidad -->
+      <div class="bg-gray-900/50 p-6 rounded-xl border border-gray-800 hover:border-purple-500/30 transition-all duration-300 md:col-span-2">
+        <h2 class="text-2xl font-bold mb-4 text-purple-400 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+          </svg>
+          Personajes y Teatralidad
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <p class="text-gray-300 leading-relaxed mb-4">
+              La banda es conocida por su elaborada puesta en escena donde los miembros (excepto el vocalista) son "Nameless Ghouls" con máscaras idénticas. Cada era de la banda introduce nuevos personajes y vestuarios.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+              El vocalista ha adoptado varios personajes papales: Papa Emeritus I-IV (antipapas demoníacos) y más recientemente Cardinal Copia, quien fue "ascendido" a Papa Emeritus IV durante el tour "Ultimate Tour Named Death".
+            </p>
+          </div>
+          <div class="flex justify-center">
+            <img src="https://i.redd.it/ghost-band-papa-emeritus-iv-v0-1h5m3m1k6j4a1.jpg" 
+                 alt="Papa Emeritus IV" 
+                 class="rounded-lg max-h-64 object-cover border border-purple-900/50">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Enlaces y redes sociales -->
+    <div class="mt-16 text-center">
+      <h3 class="text-xl font-light text-gray-400 mb-6">EXPLORA MÁS</h3>
+      <div class="flex justify-center space-x-8">
         <a href="https://open.spotify.com/artist/1Qp56T7n950O3EGMsSl81D" 
            target="_blank" 
-           class="text-white hover:text-purple-700 transition-colors">
+           class="text-white hover:text-purple-400 transition-colors transform hover:scale-110 duration-300">
           <span class="sr-only">Spotify</span>
-          <i class="fab fa-spotify text-3xl"></i>
+          <i class="fab fa-spotify text-4xl"></i>
         </a>
         <a href="https://ghost-official.com/" 
            target="_blank" 
-           class="text-white hover:text-purple-700 transition-colors">
+           class="text-white hover:text-purple-400 transition-colors transform hover:scale-110 duration-300">
           <span class="sr-only">Sitio Oficial</span>
-          <i class="fas fa-globe text-3xl"></i>
+          <i class="fas fa-globe text-4xl"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCa25JQ4XKbrpIq1sJ1TZ_lg" 
+           target="_blank" 
+           class="text-white hover:text-purple-400 transition-colors transform hover:scale-110 duration-300">
+          <span class="sr-only">YouTube</span>
+          <i class="fab fa-youtube text-4xl"></i>
+        </a>
+        <a href="https://www.instagram.com/thebandghost/" 
+           target="_blank" 
+           class="text-white hover:text-purple-400 transition-colors transform hover:scale-110 duration-300">
+          <span class="sr-only">Instagram</span>
+          <i class="fab fa-instagram text-4xl"></i>
         </a>
       </div>
     </div>
@@ -45,14 +123,32 @@ In 2017, the identity of the lead singer was revealed
 
 .font-unifraktur {
   font-family: 'UnifrakturMaguntia', cursive;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
 }
 
 .fade-in {
-  animation: fadeIn 1.5s ease-out;
+  animation: fadeIn 1.5s ease-out forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Efecto de brillo al pasar el mouse */
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.6);
+}
+
+/* Transición suave para las tarjetas */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 </style>
